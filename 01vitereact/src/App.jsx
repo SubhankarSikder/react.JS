@@ -1,12 +1,16 @@
 
-
+import Ulluck from "./ulluck"
 
 
 function App() {
 
 
   return (
-   <h1>Ullucks & React with vite | SS</h1>
+    <>
+   <Ulluck/>
+   <h2>kut kut</h2>
+   <p>wou-wou</p>
+   </>
   )
 }
 

@@ -1,8 +1,11 @@
 
-
+import Ulluck from "./Ulluck"
 function App() {
   return (
-    <h1>react ....</h1>
+    <>
+      <Ulluck />
+      <h2>they are ready</h2>
+    </>
   );
 }
 
