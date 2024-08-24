@@ -14,10 +14,14 @@ function App() {
   const options = Object.keys(currencyInfo)
 
   const swap = () => {
-    setFrom(to)
-    setTo(from)
-    setConvertedAmount(amount)
-    setAmount(convertedAmount)
+    const newFrom = to;
+    const newTo = from;
+    const newAmount = convertedAmount;
+
+    setFrom(newFrom)
+    setTo(newTo)
+    setAmount(newAmount)
+    setConvertedAmount(newAmount * currencyInfo[newTo])
   }
 
   const convert = () => {
@@ -36,7 +40,7 @@ function App() {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
-                       convert()
+                        convert();
                     }}
                 >
                     <div className="w-full mb-1">
@@ -44,7 +48,7 @@ function App() {
                             label="From"
                             amount={amount}
                             currencyOptions={options}
-                            onCurrencyChange={(currency) => setAmount(amount)}
+                            onCurrencyChange={(currency) => setFrom(currency)}
                             selectCurrency={from}
                             onAmountChange={(amount) => setAmount(amount)}
                         />
@@ -60,12 +64,12 @@ function App() {
                     </div>
                     <div className="w-full mt-1 mb-4">
                         <InputBox
-                           label="To"
-                           amount={convertedAmount}
-                           currencyOptions={options}
-                           onCurrencyChange={(currency) => setTo(amount)}
-                           selectCurrency={from}
-                           amountDisable
+                            label="To"
+                            amount={convertedAmount}
+                            currencyOptions={options}
+                            onCurrencyChange={(currency) => setTo(currency)}
+                            selectCurrency={to}
+                            amountDisable
                         />
                     </div>
                     <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
@@ -75,7 +79,7 @@ function App() {
             </div>
         </div>
     </div>
-);
+  );
 }
 
 export default App
