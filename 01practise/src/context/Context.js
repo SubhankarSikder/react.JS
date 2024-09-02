@@ -9,7 +9,10 @@ export const Context = createContext({
             completed: false
         }
     ],
-    addObj: (msg) => {}
+    addObj: (obj) => {},
+    deleteObj: (id) => {},
+    updateObj: (id, msg) => {},
+    toggleComplete: (id) => {}
 })
 
 export const useCon = () => {
@@ -17,3 +20,4 @@ export const useCon = () => {
 }
 
 export const ProvideContext = Context.Provider
+
