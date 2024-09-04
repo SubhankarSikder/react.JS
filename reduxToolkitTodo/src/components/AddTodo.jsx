@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import useDispatch from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addTodo } from '../features/todo/todoSlice'
 
 function AddTodo() {
@@ -27,3 +27,4 @@ function AddTodo() {
 }
 
 export default AddTodo
+
